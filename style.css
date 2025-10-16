@@ -5,3 +5,37 @@ body {
     background: #c3ccda;
     color: #222;
 }
+
+#page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Form Card  */
+#form-container {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 28px 32px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 4px 16px black;
+}
+
+h1 {
+    margin-top: 28px;
+    font-size: 1.1rem;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+h2 {
+    margin-top: 28px;
+    font-size: 1.1rem;
+    color: #666;border-top: 1px solid #eee;
+    padding-top: 12px;
+}
