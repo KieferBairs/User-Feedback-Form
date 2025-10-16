@@ -72,3 +72,13 @@ button {
     transition: background .1s;
 }
 button:hovern { background: #2563eb; }
+
+/* Feedback entries */
+#feedback-display > .item {
+    border: 1px solid #eee;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 10px;
+}
+
