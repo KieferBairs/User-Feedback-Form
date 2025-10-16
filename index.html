@@ -8,11 +8,11 @@
     <script src="cp_1.js" defer></script>
 </head>
 <body>
-    <div id="page">
-        <div id="form-container">
+ <div id="page">
+    <div id="form-container">
         <h1>Customer Feedback Form</h1>
 
-        <form id="feedback-form">
+         <form id="feedback-form">
             <div class="field" data-tooltip="Enter your full name">
                 <label for="name">Name</label>
                 <input id="name">
@@ -29,8 +29,15 @@
                 <div class="row"><span class="count">0/500</span><span class="error"></span></div>
             </div>
             <button type="submit">Submit Feedback</button>
-        </form>
+         </form>
         
+        <h2>Recent Feedback</h2>
+        <div id="feedback-dispaly"></div>
+    </div>
+    <div id="tooltip" hidden></div>  
+</div>
+        
+
     
 </body>
 </html>
