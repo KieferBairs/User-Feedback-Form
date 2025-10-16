@@ -8,8 +8,29 @@
     <script src="cp_1.js" defer></script>
 </head>
 <body>
-    <h1 id="title">User Feedback Form</h1>
+    <div id="page">
+        <div id="form-container">
+        <h1>Customer Feedback Form</h1>
 
-    <form action=""></form>
+        <form id="feedback-form">
+            <div class="field" data-tooltip="Enter your full name">
+                <label for="name">Name</label>
+                <input id="name">
+            </div>
+            
+            <div class="field" data-tooltip="Enter a valid email address">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="field" data-tooltip="Write up to 500 charecters">
+                <label for="comments">Comments</label>
+                <textarea id="comments" maxlength="500"></textarea>
+                <div class="row"><span class="count">0/500</span><span class="error"></span></div>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        
+    
 </body>
 </html>
