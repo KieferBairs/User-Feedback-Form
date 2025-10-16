@@ -20,7 +20,7 @@ wrap.addEventListener('mouseover', (e) => {
     const msg = f.dataset.tooltip;
     if (!msg) return;
     tip.textContent = msg;
-    const rect = f.getBoundingClientRect()
+    const rect = f.getBoundingClientRect();
     tip.style.left = rect.left + 'px';
     tip.style.top = (rect.top +window.scrollY - 38) + 'px';
     tip.hidden = false;
@@ -31,9 +31,10 @@ wrap.addEventListener('mouseout', () => (tip.hidden = true ));
 form.addEventListener('submit' , (e) => {
     e.preventDefault();
     clearErrors();
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const comments = form.comments.value.trim();
+    const name = form.querySelector('#name').value.trim();
+    const email = form.querySelector('#email').value.trim();
+    const comments = form.querySelector('#comments').value.trim();
+
 
     let valid = true;
     if (!name) showErr('name');
@@ -60,8 +61,5 @@ function showErr(id) {
     .querySelector('.error').textContent = 'Required';
 }
 function clearErrors() {
-    form.querySelectorAll('.error').forEach((c) => {
-        c.textContent = c.closest('.field').querySelector('#comments')
-            ? '0/500' : 0;
-    });
-}
+  form.querySelectorAll('.error').forEach((el) => el.textContent = '')
+    };
