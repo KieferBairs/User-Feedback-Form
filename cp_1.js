@@ -26,3 +26,26 @@ wrap.addEventListener('mouseover', (e) => {
     tip.hidden = false;
 });
 wrap.addEventListener('mouseout', () => (tip.hidden = true ));
+
+// validation and display
+form.addEventListener('submit' , (e) => {
+    e.preventDefault();
+    clearErrors();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const comments = form.comments.value.trim();
+
+    let valid = true;
+    if (!name) showErr('name');
+    if (!emaul) showErr('email');
+    if (!comments) showErr('comments');
+    if (!name || !email || !comments) valid = false;
+    if (!valid) return;
+    
+    const item = document.createElement('div');
+    item.className = 'item';
+    item.textContent = `${name} (${email}): ${comments}`;
+    list.prepend(item);
+    form.reset();
+    resetCounts();
+});
