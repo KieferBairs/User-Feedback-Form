@@ -12,3 +12,17 @@ form.addEventListener('input', (e) => {
     if (t.id === 'comments') count.textContent = `${t.value.length}/${t.maxLength}`;
     else count.textContent = t.value.length;
 });
+
+// Tooltips
+wrap.addEventListener('mouseover', (e) => {
+    const f = e.target.closest('.field');
+    if (!f) return;
+    const msg = f.dataset.tooltip;
+    if (!msg) return;
+    tip.textContent = msg;
+    const rect = f.getBoundingClientRect()
+    tip.style.left = rect.left + 'px';
+    tip.style.top = (rect.top +window.scrollY - 1) + 'px';
+    tip.hidden = false;
+});
+wrap.addEventListener('mouseout', () => (tip.hidden = true ));
