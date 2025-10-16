@@ -82,3 +82,24 @@ button:hovern { background: #2563eb; }
     margin-top: 10px;
 }
 
+/* Counts, Errors, And Tooltip Styling */
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 4px;
+}
+.count { color: #555 }
+.error {color: #d33;}
+
+#tooltip {
+    position: fixed;
+    padding: 6px 8px;
+    background: #111;
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+    transform: translateY(-8px);
+    pointer-events: none;
+    z-index: 10;
+}
