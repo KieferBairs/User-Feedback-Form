@@ -22,7 +22,7 @@ wrap.addEventListener('mouseover', (e) => {
     tip.textContent = msg;
     const rect = f.getBoundingClientRect()
     tip.style.left = rect.left + 'px';
-    tip.style.top = (rect.top +window.scrollY - 1) + 'px';
+    tip.style.top = (rect.top +window.scrollY - 38) + 'px';
     tip.hidden = false;
 });
 wrap.addEventListener('mouseout', () => (tip.hidden = true ));
@@ -37,7 +37,7 @@ form.addEventListener('submit' , (e) => {
 
     let valid = true;
     if (!name) showErr('name');
-    if (!emaul) showErr('email');
+    if (!email) showErr('email');
     if (!comments) showErr('comments');
     if (!name || !email || !comments) valid = false;
     if (!valid) return;
@@ -49,3 +49,8 @@ form.addEventListener('submit' , (e) => {
     form.reset();
     resetCounts();
 });
+
+// Stop background clicks
+page.addEventListener('click' , () => {});
+wrap.addEventListener('click', (e) => e.stopPropagation());
+
