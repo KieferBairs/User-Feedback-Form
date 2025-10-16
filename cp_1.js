@@ -65,3 +65,12 @@ function showErr(id) {
 function clearErrors() {
   form.querySelectorAll('.error').forEach((el) => el.textContent = '')
     };
+
+    function resetCounts() {
+  // Only reset the comments counter if it exists
+  const comments = form.querySelector('#comments');
+  if (!comments) return;
+  
+  const count = comments.closest('.field')?.querySelector('.count');
+  if (count) count.textContent = `0/${comments.maxLength || 500}`;
+}
