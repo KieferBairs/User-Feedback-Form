@@ -8,7 +8,7 @@ const tip = document.getElementById("tooltip");
 form.addEventListener('input', (e) => {
     const t =e.target;
     if (!t.matches('#name, #email, #comments')) return;
-    const count =t.closest('.field').querySelector('count');
+    const count =t.closest('.field').querySelector('.count');
     if (t.id === 'comments') count.textContent = `${t.value.length}/${t.maxLength}`;
     else count.textContent = t.value.length;
 });
@@ -54,3 +54,14 @@ form.addEventListener('submit' , (e) => {
 page.addEventListener('click' , () => {});
 wrap.addEventListener('click', (e) => e.stopPropagation());
 
+// helpers
+function showErr(id) {
+    form.querySelector (`#${id}`).closest('.field')
+    .querySelector('.error').textContent = 'Required';
+}
+function clearErrors() {
+    form.querySelectorAll('.error').forEach((c) => {
+        c.textContent = c.closest('.field').querySelector('#comments')
+            ? '0/500' : 0;
+    });
+}
